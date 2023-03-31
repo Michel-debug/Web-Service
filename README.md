@@ -2,6 +2,7 @@
 This is a project for class Web_Service, the topic is about lab members + semantic scholar
 
 Member_1 : CHEN Junjie  michel724915929@gmail.com
+
 Member_2 : FENG Jiaqi  jiaqifeng077@gmail.com
 
 Introduction : 
