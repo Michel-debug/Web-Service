@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="LabAndResearcherWebServiceImpl" targetNamespace="http://service.ws.web.management.researcher/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.ws.web.management.researcher/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://service.ws.web.management.researcher/" schemaLocation="labandresearcherwebserviceimpl_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="deleteLabByName">
+    <wsdl:part name="labname" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateLabResponse">
+    <wsdl:part name="return" type="xsd:boolean">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteResearcherResponse">
+    <wsdl:part name="return" type="xsd:boolean">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLabByName">
+    <wsdl:part name="name" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateLab">
+    <wsdl:part name="Lab" type="tns:lab">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="linkLabWithResearcher">
+    <wsdl:part name="labName" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="researcherId" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getResearcherByLabResponse">
+    <wsdl:part name="return" type="tns:researcherArray">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createResearcherResponse">
+    <wsdl:part name="return" type="xsd:boolean">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getResearcherByLab">
+    <wsdl:part name="labName" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteLabByNameResponse">
+    <wsdl:part name="return" type="xsd:boolean">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteResearcher">
+    <wsdl:part name="researcherId" type="xsd:string">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createResearcher">
+    <wsdl:part name="researcher" type="tns:researcher">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetLabByNameResponse">
+    <wsdl:part name="return" type="tns:lab">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="linkLabWithResearcherResponse">
+    <wsdl:part name="return" type="xsd:boolean">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LabAndResearcherWebService">
+    <wsdl:operation name="getResearcherByLab">
+      <wsdl:input name="getResearcherByLab" message="tns:getResearcherByLab">
+    </wsdl:input>
+      <wsdl:output name="getResearcherByLabResponse" message="tns:getResearcherByLabResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteResearcher">
+      <wsdl:input name="deleteResearcher" message="tns:deleteResearcher">
+    </wsdl:input>
+      <wsdl:output name="deleteResearcherResponse" message="tns:deleteResearcherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteLabByName">
+      <wsdl:input name="deleteLabByName" message="tns:deleteLabByName">
+    </wsdl:input>
+      <wsdl:output name="deleteLabByNameResponse" message="tns:deleteLabByNameResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabByName">
+      <wsdl:input name="GetLabByName" message="tns:GetLabByName">
+    </wsdl:input>
+      <wsdl:output name="GetLabByNameResponse" message="tns:GetLabByNameResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createResearcher">
+      <wsdl:input name="createResearcher" message="tns:createResearcher">
+    </wsdl:input>
+      <wsdl:output name="createResearcherResponse" message="tns:createResearcherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLab">
+      <wsdl:input name="CreateLab" message="tns:CreateLab">
+    </wsdl:input>
+      <wsdl:output name="CreateLabResponse" message="tns:CreateLabResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="linkLabWithResearcher">
+      <wsdl:input name="linkLabWithResearcher" message="tns:linkLabWithResearcher">
+    </wsdl:input>
+      <wsdl:output name="linkLabWithResearcherResponse" message="tns:linkLabWithResearcherResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LabAndResearcherWebServiceImplSoapBinding" type="tns:LabAndResearcherWebService">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getResearcherByLab">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="getResearcherByLab">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:input>
+      <wsdl:output name="getResearcherByLabResponse">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteResearcher">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="deleteResearcher">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:input>
+      <wsdl:output name="deleteResearcherResponse">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteLabByName">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="deleteLabByName">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:input>
+      <wsdl:output name="deleteLabByNameResponse">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabByName">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="GetLabByName">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:input>
+      <wsdl:output name="GetLabByNameResponse">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createResearcher">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="createResearcher">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:input>
+      <wsdl:output name="createResearcherResponse">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLab">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="CreateLab">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:input>
+      <wsdl:output name="CreateLabResponse">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="linkLabWithResearcher">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="linkLabWithResearcher">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:input>
+      <wsdl:output name="linkLabWithResearcherResponse">
+        <soap:body use="literal" namespace="http://service.ws.web.management.researcher/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LabAndResearcherWebServiceImpl">
+    <wsdl:port name="LabAndResearcherWebServiceImplPort" binding="tns:LabAndResearcherWebServiceImplSoapBinding">
+      <soap:address location="http://localhost:8080/researcher.management.web.ws/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

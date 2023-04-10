@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"researcher.management.web.rs.service","l":"LabAndResearcherService"}];updateSearchResults();
