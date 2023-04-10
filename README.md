@@ -65,10 +65,15 @@ First, the program creates two labs in the local system using JAX-RS: a "French 
 Next, the program creates five researchers and associates them with the labs:
 
 Researcher 1: Junjie CHEN (Chinese Lab)
+
 Researcher 2: FENG Jiaqi (French Lab)
+
 Researcher 3: WANG Jianguo (French Lab)
+
 Researcher 4: ZHANG SAN (French Lab)
+
 Researcher 5: LI Si (French Lab)
+
 The program then retrieves the "French Lab" using its name and retrieves researchers associated with the "French Lab".
 
 It updates the lab of Researcher 1 (Junjie CHEN) from "Chinese Lab" to "French Lab".
