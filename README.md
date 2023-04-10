@@ -14,11 +14,17 @@ This project aimed to realize the interaction between client and service, with t
 Services' description : 
 Our server provides functionality for managing labs and researchers through a web service. The main features of the server include:
 1.Creating a researcher: Users can create a new researcher with a unique ID, name, email, lab name, and the number of articles they have published. The server stores this information in a PostgreSQL database.
+
 2.Linking a lab with a researcher: The server allows users to associate a researcher with a specific lab by updating the lab name in the researcher's record in the database.
+
 3.Deleting a researcher: Users can delete a researcher from the database by providing the researcher's ID.
+
 4.Fetching researchers by lab: The server can retrieve a list of researchers associated with a specific lab by querying the database for all researchers with the provided lab name.
+
 5.Creating a lab: Users can create a new lab with a unique name and a description. This information is stored in the database.
+
 6.Deleting a lab: Users can delete a lab from the database by providing the lab's name. Before deleting the lab, the server unlinks all researchers associated with the lab.
+
 7.Getting lab details by name: Users can retrieve a lab's details, such as its name and description, by providing the lab's name. If the lab is not found, the server returns a new empty Lab object with a "Not found" message.
 
 The server's main method demonstrates the creation of a lab and a researcher, and how they can be linked together for test local.
@@ -32,10 +38,15 @@ This Java client program is designed to interact with a Researcher Management Sy
 The main functionalities of the client program are as follows:
 
 1.Creating labs and researchers in the local system using JAX-RS.
+
 2.Retrieving labs by their name and researchers by their associated lab name.
+
 3.Updating the lab of a researcher.
+
 4.Deleting labs and researchers from the system.
+
 5.Retrieving external researcher information using the Semantic Scholar API and storing it in the local system.
+
 6.The program starts by testing JAX-WS functionalities for creating labs. Then, it demonstrates how to create labs and researchers in the local system using JAX-RS. It retrieves labs by their name and researchers by their associated lab name. It also updates a researcher's lab and deletes labs and researchers from the system.
 
 Additionally, the program utilizes the Semantic Scholar API to fetch external researcher information based on researcher IDs. It stores the external researcher information, such as name, email, lab, and number of publications, into the local system. Finally, it cleans up the local system by deleting the researchers and labs fetched from the external API.
